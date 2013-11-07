@@ -1,10 +1,18 @@
-# Ruby, tests, code review and automation.
+## Ruby, tests, code review and automation.
 
 Christophe Philemotte, BRUG 5 Nov 2013
 
 ---
 
-## Ruby is Dynamic typing
+### About me
+
+* Developer
+* founder and C?O of 8th Color
+* PullReview
+
+---
+
+### Ruby is Dynamic typing
 
 ```Ruby
 x = false
@@ -13,7 +21,7 @@ x = 'this is a string'
 ```
 ---
 
-## and strong typing
+### and strong typing
 
 ```Ruby
 x = '3'
@@ -23,7 +31,7 @@ x = x + 3
 
 ---
 
-## Ruby is Duck typing
+### Ruby is Duck typing
 
 ```Ruby
 class Duck
@@ -50,7 +58,7 @@ from Wikipedia
 
 ---
 
-## Getting Weak Typing with Duck Typing
+### Getting Weak Typing with Duck Typing
 
 ```Ruby
 class Fixnum
@@ -71,26 +79,23 @@ y = 3 + x
 
 ---
 
-## More Freedom
+### With Great Freedom
 
-* Meaningfull
-* Concise
-* Flexible
-* Contract Based
-* Easy DCI
+* Meaningfull & Concise
+* Flexible & Contract Based
+* Easy DI
 
 ---
 
-## More Risk
+### Comes Great Risk
 
 * Error Only at Runtime
 * No Static Interface
 * You shouldn't care of the type, but ...
-* Obscure Magic
 
 ---
 
-## How to Mitigate?
+### How to Mitigate?
 
 * Writing Tests
 * Code Review
@@ -98,7 +103,7 @@ y = 3 + x
 
 ---
 
-## Tests Benefits
+### Tests Benefits
 
 * Check the Contract and the User Story
 * Reliable Changes through Time
@@ -108,16 +113,7 @@ y = 3 + x
 
 ---
 
-## Tests Benefits
-
-> Comparing [TDD] to the non-test-driven development approach, you're replacing
-> all the mental checking and debugger stepping with code that verifies that
-> your program does exactly what you intended it to do.
-> (Noel 2005)
-
----
-
-## Tests Framework
+### Tests Framework
 
 * Test:Unit
 * MiniTest
@@ -126,7 +122,13 @@ y = 3 + x
 
 ---
 
-## Tests CI
+### Continuous Integration
+
+![kitty](images/everytime-you-break-the-build.png)
+
+---
+
+### Continuous Integration
 
 * Jenkins
 * Travis
@@ -135,7 +137,11 @@ y = 3 + x
 
 ---
 
-## Code Review Benefits
+### Code Review is a Discussion
+
+![discussion](images/code-review.png)
+
+### Code Review Benefits
 
 * Knowledge Sharing
 * Mutual Education in the Team
@@ -146,14 +152,7 @@ y = 3 + x
 
 ---
 
-## Code Review Benefits
-
-> Rigorous inspections can remove 60-90% of errors before the first test is run.
-> (Fagan 1975)
-
----
-
-## Code Review Benefits
+### Code Review Benefits
 
 > 60% of all issues raised in the code inspections are not problems that could
 > have been uncovered by latter phases of testing or field usage because they
@@ -163,22 +162,7 @@ y = 3 + x
 
 ---
 
-## Code Review Benefits
-
-> Industry data indicates that code reviews can accomplish at most an 85% defect
-> removal rate with an average rate of about 65%.
-> (Capers Jones 2008)
-
----
-
-## Code Review Benefits
-
-> Code review would have saved half the cost of fixing the bugs.
-> (Best Kept Secrets of Peer Code Review 2013)
-
----
-
-## Code Review Tools
+### Code Review Tools
 
 * GitHub PullRequest
 * Gerrit
@@ -187,30 +171,36 @@ y = 3 + x
 
 ---
 
-## Automated Code Review Benefits
+### Automated Code Review Benefits
 
-* Short Feedback Time
-* None Emotional Influences
-* Tracking Progress
-* Reproducible, Invariable
-* Don't Waste Peer Time
+> Automation is necessary. It is common to take a sort of smug satisfaction in
+> reports of colossal failures of automatic systems, but for every failure of
+> automation, the failures of humans are legion.
 
 ---
 
-## Automated Code Review Benefits
+### Automated Code Review Benefits
 
-> Automation is necessary.  It is common to take a sort of smug satisfaction in
-> reports of colossal failures of automatic systems, but for every failure of
-> automation, the failures of humans are legion.  Exhortations to “write better
-> code” plans for more code reviews, pair programming, and so on just don’t cut
-> it, especially in an environment with dozens of programmers under a lot of
-> time pressure.  The value in catching even the small subset of errors that are
-> tractable to static analysis every single time is huge.
+> Exhortations to "write better code" plans for more code reviews, pair
+> programming, and so on just don’t cut it, especially in an environment with
+> dozens of programmers under a lot of time pressure.  The value in catching
+> even the small subset of errors that are tractable to static analysis every
+> single time is huge.
 > John Carmack, 2011
 
 ---
 
-## Automated Code Review Tools
+### Automated Code Review Benefits
+
+* Short Feedback Time and NOW!
+* None Emotional Influences
+* Tracking Progress
+* Reproducible, Invariable
+* Don't Waste Peer Time, Spent time on Complicated.
+
+---
+
+### Automated Code Review Tools
 
 * Ruby Warning (Linter)
 * Flog (Complexity)
@@ -223,13 +213,18 @@ y = 3 + x
 
 ---
 
-## Automated Code Review Tools
+### Automated Code Review Tools
 
 * CodeClimate
 * PullReview
 
-![Review](review.png)
+![Review](images/review.png)
 
 ---
 
-## Conclusion
+### Conclusion
+
+* Start right now
+* Setup one thing at a time with your team
+* It's an incremental and team process
+* There are complementary strategies

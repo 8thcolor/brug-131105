@@ -1,26 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-<link href="file:///home/toch/.rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/css/reveal.min.css" rel="stylesheet">
-<link href="file:///home/toch/.rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/css/theme/default.css" rel="stylesheet">
+<link href="file:///usr/local/rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/css/reveal.min.css" rel="stylesheet">
+<link href="file:///usr/local/rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/css/theme/default.css" rel="stylesheet">
 </head>
 <body>
 <div class="reveal"><div class="slides">
-<section><h1>Ruby, tests, code review and automation.</h1>
+<section><h2>Ruby, tests, code review and automation.</h2>
 <p>Christophe Philemotte, BRUG 5 Nov 2013</p>
 </section><section>
-<h2>Ruby is Dynamic typing</h2>
+<h3>About me</h3>
+<ul>
+<li><p>Developer</p></li>
+<li><p>founder and C?O of 8th Color</p></li>
+<li><p>PullReview</p></li>
+</ul>
+</section><section>
+<h3>Ruby is Dynamic typing</h3>
 <pre class="language-Ruby"><code>x = false
 x = 3
 x = 'this is a string'
 </code></pre></section><section>
-<h2>and strong typing</h2>
+<h3>and strong typing</h3>
 <pre class="language-Ruby"><code>x = '3'
 x = x + 3
 # TypeError: no implicit conversion of Fixnum into String
 </code></pre>
 </section><section>
-<h2>Ruby is Duck typing</h2>
+<h3>Ruby is Duck typing</h3>
 <pre class="language-Ruby"><code>class Duck
   def quack
     puts 'Quaaaaaack!'
@@ -43,7 +50,7 @@ john.quack
 </code></pre>
 <p>from Wikipedia</p>
 </section><section>
-<h2>Getting Weak Typing with Duck Typing</h2>
+<h3>Getting Weak Typing with Duck Typing</h3>
 <pre class="language-Ruby"><code>class Fixnum
   alias_method :old_plus, :+
 
@@ -60,31 +67,28 @@ x = '3'
 y = 3 + x
 </code></pre>
 </section><section>
-<h2>More Freedom</h2>
+<h3>With Great Freedom</h3>
 <ul>
-<li><p>Meaningfull</p></li>
-<li><p>Concise</p></li>
-<li><p>Flexible</p></li>
-<li><p>Contract Based</p></li>
-<li><p>Easy DCI</p></li>
+<li><p>Meaningfull &amp; Concise</p></li>
+<li><p>Flexible &amp; Contract Based</p></li>
+<li><p>Easy DI</p></li>
 </ul>
 </section><section>
-<h2>More Risk</h2>
+<h3>Comes Great Risk</h3>
 <ul>
 <li><p>Error Only at Runtime</p></li>
 <li><p>No Static Interface</p></li>
 <li><p>You shouldn&rsquo;t care of the type, but &hellip;</p></li>
-<li><p>Obscure Magic</p></li>
 </ul>
 </section><section>
-<h2>How to Mitigate?</h2>
+<h3>How to Mitigate?</h3>
 <ul>
 <li><p>Writing Tests</p></li>
 <li><p>Code Review</p></li>
 <li><p>Automation</p></li>
 </ul>
 </section><section>
-<h2>Tests Benefits</h2>
+<h3>Tests Benefits</h3>
 <ul>
 <li><p>Check the Contract and the User Story</p></li>
 <li><p>Reliable Changes through Time</p></li>
@@ -93,13 +97,7 @@ y = 3 + x
 <li><p>Speed the dev Cycle</p></li>
 </ul>
 </section><section>
-<h2>Tests Benefits</h2>
-<blockquote><p>Comparing [TDD] to the non-test-driven development approach, you&rsquo;re replacing<br>
-all the mental checking and debugger stepping with code that verifies that<br>
-your program does exactly what you intended it to do.<br>
-(Noel 2005)</p></blockquote>
-</section><section>
-<h2>Tests Framework</h2>
+<h3>Tests Framework</h3>
 <ul>
 <li><p>Test:Unit</p></li>
 <li><p>MiniTest</p></li>
@@ -107,7 +105,10 @@ your program does exactly what you intended it to do.<br>
 <li><p>Cucumber</p></li>
 </ul>
 </section><section>
-<h2>Tests CI</h2>
+<h3>Continuous Integration</h3>
+<p><img src="images/everytime-you-break-the-build.png" alt="kitty"></p>
+</section><section>
+<h3>Continuous Integration</h3>
 <ul>
 <li><p>Jenkins</p></li>
 <li><p>Travis</p></li>
@@ -115,7 +116,9 @@ your program does exactly what you intended it to do.<br>
 <li><p>Semapore</p></li>
 </ul>
 </section><section>
-<h2>Code Review Benefits</h2>
+<h3>Code Review is a Discussion</h3>
+<p><img src="images/code-review.png" alt="discussion"></p>
+<h3>Code Review Benefits</h3>
 <ul>
 <li><p>Knowledge Sharing</p></li>
 <li><p>Mutual Education in the Team</p></li>
@@ -125,27 +128,14 @@ your program does exactly what you intended it to do.<br>
 <li><p>Shorter Dev/Test Cycles</p></li>
 </ul>
 </section><section>
-<h2>Code Review Benefits</h2>
-<blockquote><p>Rigorous inspections can remove 60-90% of errors before the first test is run.<br>
-(Fagan 1975)</p></blockquote>
-</section><section>
-<h2>Code Review Benefits</h2>
+<h3>Code Review Benefits</h3>
 <blockquote><p>60% of all issues raised in the code inspections are not problems that could<br>
 have been uncovered by latter phases of testing or field usage because they<br>
 have little or nothing to do with the visible execution behavior of the<br>
 software.<br>
 (H. Siy and L. Votta 2001)</p></blockquote>
 </section><section>
-<h2>Code Review Benefits</h2>
-<blockquote><p>Industry data indicates that code reviews can accomplish at most an 85% defect<br>
-removal rate with an average rate of about 65%.<br>
-(Capers Jones 2008)</p></blockquote>
-</section><section>
-<h2>Code Review Benefits</h2>
-<blockquote><p>Code review would have saved half the cost of fixing the bugs.<br>
-(Best Kept Secrets of Peer Code Review 2013)</p></blockquote>
-</section><section>
-<h2>Code Review Tools</h2>
+<h3>Code Review Tools</h3>
 <ul>
 <li><p>GitHub PullRequest</p></li>
 <li><p>Gerrit</p></li>
@@ -153,26 +143,29 @@ removal rate with an average rate of about 65%.<br>
 <li><p>Crucible</p></li>
 </ul>
 </section><section>
-<h2>Automated Code Review Benefits</h2>
+<h3>Automated Code Review Benefits</h3>
+<blockquote><p>Automation is necessary. It is common to take a sort of smug satisfaction in<br>
+reports of colossal failures of automatic systems, but for every failure of<br>
+automation, the failures of humans are legion.</p></blockquote>
+</section><section>
+<h3>Automated Code Review Benefits</h3>
+<blockquote><p>Exhortations to &ldquo;write better code&rdquo; plans for more code reviews, pair<br>
+programming, and so on just don&rsquo;t cut it, especially in an environment with<br>
+dozens of programmers under a lot of time pressure.  The value in catching<br>
+even the small subset of errors that are tractable to static analysis every<br>
+single time is huge.<br>
+John Carmack, 2011</p></blockquote>
+</section><section>
+<h3>Automated Code Review Benefits</h3>
 <ul>
-<li><p>Short Feedback Time</p></li>
+<li><p>Short Feedback Time and NOW!</p></li>
 <li><p>None Emotional Influences</p></li>
 <li><p>Tracking Progress</p></li>
 <li><p>Reproducible, Invariable</p></li>
-<li><p>Don&rsquo;t Waste Peer Time</p></li>
+<li><p>Don&rsquo;t Waste Peer Time, Spent time on Complicated.</p></li>
 </ul>
 </section><section>
-<h2>Automated Code Review Benefits</h2>
-<blockquote><p>Automation is necessary.  It is common to take a sort of smug satisfaction in<br>
-reports of colossal failures of automatic systems, but for every failure of<br>
-automation, the failures of humans are legion.  Exhortations to &ldquo;write better<br>
-code&rdquo; plans for more code reviews, pair programming, and so on just don&rsquo;t cut<br>
-it, especially in an environment with dozens of programmers under a lot of<br>
-time pressure.  The value in catching even the small subset of errors that are<br>
-tractable to static analysis every single time is huge.<br>
-John Carmack, 2011</p></blockquote>
-</section><section>
-<h2>Automated Code Review Tools</h2>
+<h3>Automated Code Review Tools</h3>
 <ul>
 <li><p>Ruby Warning (Linter)</p></li>
 <li><p>Flog (Complexity)</p></li>
@@ -184,15 +177,21 @@ John Carmack, 2011</p></blockquote>
 <li><p>Yard (Documentation)</p></li>
 </ul>
 </section><section>
-<h2>Automated Code Review Tools</h2>
+<h3>Automated Code Review Tools</h3>
 <ul>
 <li><p>CodeClimate</p></li>
 <li><p>PullReview</p></li>
 </ul>
-<p><img src="review.png" alt="Review"></p>
+<p><img src="images/review.png" alt="Review"></p>
 </section><section>
-<h2>Conclusion</h2></section>
+<h3>Conclusion</h3>
+<ul>
+<li><p>Start right now</p></li>
+<li><p>Setup one thing at a time with your team</p></li>
+<li><p>It&rsquo;s an incremental and team process</p></li>
+<li><p>There are complementary strategies</p></li>
+</ul></section>
 </div></div>
-<script src="file:///home/toch/.rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/lib/js/head.min.js" type="text/javascript"></script><script src="file:///home/toch/.rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/js/reveal.js" type="text/javascript"></script><script>Reveal.initialize({ dependencies: [],  });</script>
+<script src="file:///usr/local/rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/lib/js/head.min.js" type="text/javascript"></script><script src="file:///usr/local/rvm/gems/ruby-2.0.0-p247/gems/slippery-0.0.1/assets/reveal.js/js/reveal.js" type="text/javascript"></script><script>Reveal.initialize({ dependencies: [],  });</script>
 </body>
 </html>
